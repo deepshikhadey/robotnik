@@ -1,15 +1,78 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
-        <title>iRobot Web Controller</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <title>Dr. Kenneth R. Loggins III</title>
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
         <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
     </head>
     <body>
-        <iframe id="spreecast-player" type="text/html" width="900" height="470" src="http://www.spreecast.com/events/irobot/embed-large" frameborder="0"></iframe>
-        <h1 style="position:absolute;LEFT:540px"> Awesome title goes here!</h1>
-        <a id="l1" href="#" onclick="$.ajax({url:/left})"><img style="position:absolute;TOP:350px;LEFT:420px;WIDTH:180px;Height:150px" src="/static/Arrow-Blue-Outline-Left-300x230.jpg" alt="Left" title="Left"/></a>
-        <a id="r1" href="/right"><img style="position:absolute;TOP:350px;LEFT:820px;WIDTH:180px;Height:150px" src="/static/Arrow-Blue-Outline-Right-300x230.jpg" alt="Right" title="Right"/></a>
-        <a id="u1" href="/up"><img style="position:absolute;TOP:200px;LEFT:620px;WIDTH:180px;Height:150px" src="/static/Arrow-Blue-Outline-Up-300x230.jpg" alt="Up" title="Up"/></a>
-        <a id="d1" href="/down"><img style="position:absolute;TOP:500px;LEFT:620px;WIDTH:180px;Height:150px" src="/static/Arrow-Blue-Outline-Down-300x230.jpg" alt="Down" title="Down"/></a>
-        <a id="stop" href="/stop"><img style="position:absolute;TOP:365px;LEFT:635px;WIDTH:150px;Height:120px" src="/static/stop-button-776319.png" alt="Stop" title="Stop"/></a>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://localhost:5000">Dr. Kenneth R. Loggins III</a>
+             </div>
+           </div>
+        </div>
+
+        <div class="jumbotron" style="height:600px">
+        <div class="container">
+        <p class="lead"></p>
+        <div class="row">
+            <div class="col-lg-8" style="height: 600px;width: 900px">
+                <iframe id="spreecast-player" type="text/html" width="900" height="470" src="http://www.spreecast.com/events/irobot/embed-large" frameborder="0"></iframe>
+            </div>
+            <div class="col-lg-2" style="width: 200px; height: 600px">
+                <button id="l1" type="button" class="btn btn-default btn-lg" onclick="$.ajax({'url':'http://localhost:5000/left'})" style="position:absolute; top:150px; left: 50px">
+                    <span class="glyphicon glyphicon-arrow-left"></span>
+                </button>
+                <button id="u1" type="button" class="btn btn-default btn-lg" onclick="$.ajax({'url':'http://localhost:5000/up'})" style="position:absolute; top: 98px; left: 96px">
+                    <span class="glyphicon glyphicon-arrow-up"></span>
+                </button>
+                <button id="d1" type="button" class="btn btn-default btn-lg" onclick="$.ajax({'url':'http://localhost:5000/down'})" style="position:absolute; top: 202px; left: 96px">
+                    <span class="glyphicon glyphicon-arrow-down"></span>
+                </button>
+                <button id="r1" type="button" class="btn btn-default btn-lg" onclick="$.ajax({'url':'http://localhost:5000/right'})" style="position:absolute; top: 150px; left: 142px">
+                    <span class="glyphicon glyphicon-arrow-right"></span>
+                </button>
+                <button id="stop" type="button" class="btn btn-default btn-lg" onclick="$.ajax({'url':'http://localhost:5000/stop'})" style="position:absolute; top: 150px; left: 96px">
+                    <span class="glyphicon glyphicon-stop"></span>
+                </button>
+            </div>
+        </div>
+        </div>
+        </div>
+        <script>
+          $('body').keydown(function(e){
+              if (e.which == '37'){
+                  // Left arrow
+                  $.ajax({'url':'http://localhost:5000/left'})
+              }
+              else if (e.which == '38'){
+                  // Up arrow
+                  $.ajax({url:'http://localhost:5000/up'})
+              }
+              else if (e.which == '39'){
+                  // Right arrow
+                  $.ajax({url:'http://localhost:5000/right'})
+              }
+              else if (e.which == '40'){
+                  // Down arrow
+                  $.ajax({url:'http://localhost:5000/down'})
+              }
+              else {
+                  // stop
+                  $.ajax({url:'http://localhost:5000/stop'})
+              }
+          });      
+        </script>
   </body>
 </html>
