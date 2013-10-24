@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <title>iRobot Web Controller</title>
+    </head>
+    <body>
+        <h1 style="position:absolute;LEFT:540px"> Awesome title goes here!</h1>
+        <a id="l1" href="/left"><img style="position:absolute;TOP:350px;LEFT:420px;WIDTH:180px;Height:150px" src="/static/Arrow-Blue-Outline-Left-300x230.jpg" alt="Left" title="Left"/></a>
+        <a id="r1" href="/right"><img style="position:absolute;TOP:350px;LEFT:820px;WIDTH:180px;Height:150px" src="/static/Arrow-Blue-Outline-Right-300x230.jpg" alt="Right" title="Right"/></a>
+        <a id="u1" href="/up"><img style="position:absolute;TOP:200px;LEFT:620px;WIDTH:180px;Height:150px" src="/static/Arrow-Blue-Outline-Up-300x230.jpg" alt="Up" title="Up"/></a>
+        <a id="d1" href="/down"><img style="position:absolute;TOP:500px;LEFT:620px;WIDTH:180px;Height:150px" src="/static/Arrow-Blue-Outline-Down-300x230.jpg" alt="Down" title="Down"/></a>
+        <a id="stop" href="/stop"><img style="position:absolute;TOP:365px;LEFT:635px;WIDTH:150px;Height:120px" src="/static/stop-button-776319.png" alt="Stop" title="Stop"/></a>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>iRobot Web Controller</title>
+        <script>
+        function mouseDown()
+        {
+        document.getElementById("l1").style.color="red";
+        }
+
+        function mouseUp()
+        {
+        document.getElementById("p1").style.color="green";
+        }
+        </script>
+    </head>
+    <body>
+        <h1 style="position:absolute;LEFT:540px"> Awesome title goes here!</h1>
+        <a id="l1" href="/left"><img style="position:absolute;TOP:350px;LEFT:420px;WIDTH:180px;Height:150px" src="/static/Arrow-Blue-Outline-Left-300x230.jpg" alt="Left" title="Left" onmousedown="mouseDown()" onmouseup="mouseUp()"/></a>
+        <a id="r1" href="/right"><img style="position:absolute;TOP:350px;LEFT:820px;WIDTH:180px;Height:150px" src="/static/Arrow-Blue-Outline-Right-300x230.jpg" alt="Right" title="Right" onmousedown="mouseDown" onmouseup="mouseUp()"/></a>
+        <a id="u1" href="/up"><img style="position:absolute;TOP:200px;LEFT:620px;WIDTH:180px;Height:150px" src="/static/Arrow-Blue-Outline-Up-300x230.jpg" alt="Up" title="Up" onmousedown="mouseDown()" onmouseup="mouseUp()"/></a>
+        <a id="d1" href="/down"><img style="position:absolute;TOP:500px;LEFT:620px;WIDTH:180px;Height:150px" src="/static/Arrow-Blue-Outline-Down-300x230.jpg" alt="Down" title="Down" onmousedown="mouseDown()" onmouseup="mouseUp()"/></a>
+  </body>
+</html>
